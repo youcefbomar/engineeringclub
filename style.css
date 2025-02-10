@@ -253,3 +253,44 @@ footer {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
 }
 
+.join_us_button {
+    color: #000716;
+    font-size: 18px;
+    font-weight: 900;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    color: #333 !important;
+    position: relative;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-in-out;
+}
+
+.join_us_button:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transform: translateZ(-1px);
+    pointer-events: none;
+    transition: filter 0.3s ease;
+    background: linear-gradient(123deg, #00fa85, #33cfff 50%, #ff236c);
+    background-clip: content-box;
+    padding: 1px;
+}
+
+.join_us_button:hover:before {
+    filter: blur(15px);
+}
+
+.join_us_button:active {
+    box-shadow: none;
+}
+
+.button:active:before {
+    filter: blur(8px);
+}
