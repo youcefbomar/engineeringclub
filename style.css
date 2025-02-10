@@ -2,12 +2,14 @@
     --primary: #4f46e5;
     --secondary: #0ea5e9;
     --accent: #f43f5e;
-    --background: #0f172a;
+    --background: #0f1729;
     --text-light: #f8fafc;
     --text-dark: #1e293b;
     --card-bg: rgba(255, 255, 255, 0.95);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 ::selection{
     background-color: #4f46e5; 
     color: #ffffff; 
@@ -23,7 +25,7 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text-light);
-    background: var(--background);
+    background: repeating-radial-gradient(circle, #0c1568 , #010c2b  );
     overflow-x: hidden;
 }
 
@@ -69,8 +71,8 @@ nav a {
 }
 
 nav a:hover {
-    background: var(--primary);
-    color: white;
+    background: white;
+    color: var(--background);
 }
 
 .hero {
@@ -80,7 +82,6 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    background: radial-gradient(circle at center, rgba(79, 70, 229, 0.2) 0%, transparent 70%);
 }
 
 .hero h1 {
@@ -113,7 +114,7 @@ nav a:hover {
 }
 
 .card {
-    background: rgba(15, 23, 42, 0.75); /* More transparency for glassmorphism */
+    background: rgba(15, 23, 42, 0.3); /* Lower opacity for more transparency */
     color: var(--text-light);
     border-radius: 16px;
     padding: 2rem;
@@ -122,7 +123,10 @@ nav a:hover {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(79, 70, 229, 0.4);
-    backdrop-filter: blur(15px); /* Enhanced blur effect */
+    
+    /* Strong blur effect for the glassy look */
+    backdrop-filter: blur(50px) brightness(60%);
+    -webkit-backdrop-filter: blur(50px) brightness(60%);
 
     /* Centering */
     display: flex;
@@ -130,11 +134,13 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem; /* Space between elements */
-    
+    gap: 1rem;
+
     /* Gradient border effect */
     box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.2);
 }
+
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -237,8 +243,8 @@ footer {
 
 .button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
+    background:white;
+    color: rgb(8, 8, 8);
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
@@ -250,8 +256,26 @@ footer {
 
 .button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+    background-color: white;
 }
+
+.button:before {
+    content: "";
+    filter: blur(8px);
+    position:fixed;
+    inset: 0;
+    transform: translateZ(-1px);
+    pointer-events: none;
+    transition: filter 0.3s ease;
+    background-clip: content-box;
+    padding: 1px;
+}
+
+.button:hover:before {
+    filter: blur(15px);
+    background: linear-gradient(123deg, #00fa85, #33cfff 50%, #ff236c);
+}
+
 
 .join_us_button {
     color: #000716;
@@ -293,4 +317,42 @@ footer {
 
 .button:active:before {
     filter: blur(8px);
+}
+.join_us_button2 {
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: all 0.1s ease-in-out;
+}
+
+.join_us_button2:hover{
+    background: white;
+}
+
+.join_us_button2:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transform: translateZ(-1px);
+    pointer-events: none;
+    transition: filter 0.3s ease;
+    background-clip: content-box;
+    padding: 1px;
+}
+
+.join_us_button2:hover:before {
+    filter: blur(15px);
+    background: linear-gradient(123deg, #00fa85, #33cfff 50%, #ff236c);
+}
+
+.join_us_button2:active {
+    box-shadow: none;
 }
