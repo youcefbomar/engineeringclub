@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 ::selection{
-    background-color: #4f46e5; 
+    background-color: rgb(3, 3, 3); 
     color: #ffffff; 
 }
 
@@ -21,6 +21,9 @@ html {
     box-sizing: border-box;
 }
 
+
+
+
 body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
@@ -28,6 +31,34 @@ body {
     background: repeating-radial-gradient(circle, #0c1568 , #010c2b  );
     overflow-x: hidden;
 }
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+.slag{
+    animation: fadeIn 1.2s ease-in-out;
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.4rem;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #00fa85, #33cfff 50%, #ff236c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slag::selection{
+    -webkit-text-fill-color: white;
+
+}
+
 
 .background-grid {
     position: fixed;
@@ -85,9 +116,10 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--text-light), var(--secondary));
+    animation: fadeIn 1.2s ease-in-out;
+    font-size: 5rem;
+    margin-bottom: -2rem;
+    background: linear-gradient(135deg, #00fa85, #33cfff 50%, #ff236c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
