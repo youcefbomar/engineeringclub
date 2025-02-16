@@ -21,7 +21,9 @@ html {
     box-sizing: border-box;
 }
 
-
+a{
+    text-decoration: none;
+}
 
 
 body {
@@ -148,6 +150,17 @@ nav a:hover {
     text-align: center;
 }
 
+.long_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
 .card {
     background: rgba(15, 23, 42, 0.3); /* Lower opacity for more transparency */
     color: var(--text-light);
@@ -174,8 +187,56 @@ nav a:hover {
     /* Gradient border effect */
     box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.2);
 }
+.card-courses {
+    background: rgba(15, 23, 42, 0.3); /* Lower opacity for more transparency */
+    color: var(--text-light);
+    border-radius: 16px;
+    padding: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(79, 70, 229, 0.4);
+    
+    /* Strong blur effect for the glassy look */
+    backdrop-filter: blur(50px) brightness(60%);
+    -webkit-backdrop-filter: blur(50px) brightness(60%);
+
+    /* Centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 1rem;
+
+    /* Gradient border effect */
+    box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.2);
+}
 
 
+
+.card-courses:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.3);
+    background: rgba(15, 23, 42, 0.95);
+}
+.card-courses::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.card-courses:hover::before {
+    transform: scaleX(1);
+}
 
 .card:hover {
     transform: translateY(-5px);
@@ -390,4 +451,9 @@ footer {
 
 .join_us_button2:active {
     box-shadow: none;
+}
+
+
+.bigger_h2{
+    font-size: 40px;
 }
