@@ -143,6 +143,9 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card {
