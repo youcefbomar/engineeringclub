@@ -11,8 +11,8 @@ html {
   scroll-behavior: smooth;
 }
 ::selection{
-    background-color: rgb(3, 3, 3); 
-    color: #ffffff; 
+    background-color: rgb(255, 195, 31); 
+    color: #0a0a0a; 
 }
 
 * {
